@@ -1,0 +1,186 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Poppins;
+}
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.hero-article {
+  background-image: url('./img-main/HeroSection.png');
+}
+
+.text-hero {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+.peple-content{
+	position: relative;
+  width: 100%; 
+  height: 800px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+	max-width: 1440px;
+
+	margin: 0 auto;
+	overflow: hidden;
+	
+}
+
+.photo-peple{
+	position: relative;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  background-image: url('./img-main/photo_2024-12-13_17-38-14.jpg');
+  background-size: 650px 650px;
+  background-position: center left;
+  background-repeat: no-repeat;
+	margin-left: 42px;
+}
+
+.peple-content img {
+	width: 460px;
+	height: 100px;
+	display: block;
+}
+
+.peple-content h2{
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: 200;
+	font-family: Poppins;
+	margin-left: 10px;
+}
+
+.peple-content h4{
+	font-size: 15px;
+	font-weight: 500;
+	font-family: Poppins;
+	margin-left: 10px;
+}
+
+.peple-article-photo{
+  background-image: url('./img-main/photo_2024-12-13_19-13-59.jpg'); 
+}
+
+.hero-article,
+.peple-article-photo {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.text-article{
+	position: relative;
+  width: 100%;
+  height: 800px;
+  justify-content: center;
+  align-items: center;
+	max-width: 1440px;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.text-article h1 {
+font-size: 50px;
+color: white;
+margin-top: 267px;
+margin-left: 128px;
+}
+.text-article h2 {
+	font-size: 21px;
+	color: white;
+	margin-left: 128px;
+	padding-top: 20px;
+	font-weight: 400;
+	}
+	.photo-backgraund{
+		position: relative;
+		width: 100%;
+		height: 800px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-image: url('./img-main/photo_2024-12-13_22-26-22.jpg');
+		background-size: 650px 650px;
+		background-position: center left;
+		background-repeat: no-repeat;
+		margin-left: 42px;
+	}
+
+
+.peple-content-f {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 40px;
+	padding: 40px 20px;
+}
+
+.text-ar {
+	flex: 1;
+	max-width: 600px;
+	padding-top: 120px;
+}
+
+.text-ar h1 {
+	font-size: 42px;
+}
+
+.step {
+	margin-bottom: 25px;
+}
+
+.step h2 {
+	font-size: 20px;
+	color: #333;
+
+}
+
+.step p {
+	font-size: 16px;
+	color: #555;
+	line-height: 1.5;
+}
+
+.peplevelo {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.peplevelo-1 {
+	max-width: 100%;
+	height: 650px;
+	width: 650px;
+	border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+	.peple-content-f {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.text-ar {
+		padding: 0;
+		max-width: 100%;
+	}
+
+	.peplevelo {
+		margin-top: 30px;
+	}
+
+	.none {
+		display: none;
+	}
+}
