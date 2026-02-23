@@ -4,31 +4,22 @@ import HeaderView from '../../components/PageHome/Header/HeaderView'
 function Header() {
 	const menuItems = [
 		{
-			name: 'ELECTRIC',
-			items: [
-				{ label: 'Electric Bikes', to: '/electric-bikes' },
-				{ label: 'E-Accessories', to: '/e-accessories' }
-			]
+			name: 'Электровелосипеды',
+			items: [{ label: 'Электровелосипеды', to: '/electric-bikes' }]
 		},
 		{
-			name: 'CITY',
-			items: [
-				{ label: 'City Bikes', to: '/city-bikes' },
-				{ label: 'Urban Gear', to: '/urban-gear' }
-			]
+			name: 'Городские велосипеды',
+			items: [{ label: 'Городские велосипеды', to: '/city-bikes' }]
 		},
 		{
-			name: 'KIDS',
-			items: [
-				{ label: 'Kids Bikes', to: '/kids-bikes' },
-				{ label: 'Kids Accessories', to: '/kids-accessories' }
-			]
+			name: 'О нас',
+			items: [{ label: 'Перейти', to: '/kids-bikes' }]
 		},
 		{
-			name: 'LEASING',
+			name: 'Лизинг',
 			items: [
-				{ label: 'Corporate Leasing', to: '/corporate-leasing' },
-				{ label: 'Personal Leasing', to: '/personal-leasing' }
+				{ label: 'Корпоративный лизинг', to: '/corporate-leasing' },
+				{ label: 'Личный лизинг', to: '/personal-leasing' }
 			]
 		}
 	]

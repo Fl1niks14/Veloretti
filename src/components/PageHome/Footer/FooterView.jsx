@@ -6,97 +6,72 @@ import int from './img/SVG4.png'
 import tictoc from './img/Vector5.png'
 import NavLinkItem from '../../../NavLinkItem/NavLinkItem'
 
-function FooterView({
-	isVisible,
-	handleClick,
-	email,
-	setEmail,
-	handleSubmit,
-	subscribed
-}) {
-	console.log('FooterView props:', isVisible)
+function FooterView({ email, setEmail, handleSubmit, subscribed }) {
 	return (
 		<>
 			<div className='footer-container'>
 				<footer className='footer'>
-					{isVisible && (
-						<div className='footer-top'>
-							<p>
-								Ready to take the Electric Ivy or Ace for a spin? Electric test
-								rides are now available in <br />
-								Amsterdam, Amstelveen, Apeldoorn, Bussum, Den Haag, Nijmegen,
-								Weesp, Wormerveer, Berlin, Hamburg and Munich. Schedule your
-								test ride now and we’ll see you there.
-							</p>
-							<button onClick={handleClick} className='book-now'>
-								BOOK NOW
-							</button>
-						</div>
-					)}
-
 					<div className='footer-links'>
 						<div className='footer-column'>
-							<h4>Explorer</h4>
 							<ul>
-								<NavLinkItem to='/electric-bikes'>Electric bikes</NavLinkItem>
-								<NavLinkItem to='/city-bikes'>City bikes</NavLinkItem>
-								<NavLinkItem to='/kids-bikes'>Kids' bikes</NavLinkItem>
-								<NavLinkItem to='/accessories'>Accessories</NavLinkItem>
-								<NavLinkItem to='/outlet'>Outlet</NavLinkItem>
-								<NavLinkItem to='/business'>Business</NavLinkItem>
-								<NavLinkItem to='/insurance'>Insurance Electric</NavLinkItem>
-								<NavLinkItem to='/size-guide'>Size guide</NavLinkItem>
+								<h4>Интересно</h4>
+								<NavLinkItem to='/electric-bikes'>
+									Электровелосипеды
+								</NavLinkItem>
+								<NavLinkItem to='/city-bikes'>
+									<p>Городские велосипеды</p>
+								</NavLinkItem>
+								<NavLinkItem to='/kids-bikes'>Детские велосипеды</NavLinkItem>
 							</ul>
 
-							<h4>About</h4>
 							<ul>
-								<NavLinkItem to='/about'>About us</NavLinkItem>
-								<NavLinkItem to='/journal'>Journal</NavLinkItem>
-								<NavLinkItem to='/reviews'>Reviews</NavLinkItem>
-								<NavLinkItem to='/press'>Press</NavLinkItem>
-								<NavLinkItem to='/jobs'>Jobs</NavLinkItem>
+								<h4>О нас</h4>
+								<NavLinkItem to='/about'>О компании</NavLinkItem>
+								<NavLinkItem to='/journal'>Журнал</NavLinkItem>
+								<NavLinkItem to='/reviews'>Отзывы</NavLinkItem>
+								<NavLinkItem to='/press'>Пресса</NavLinkItem>
+								<NavLinkItem to='/jobs'>Вакансии</NavLinkItem>
 							</ul>
-
-							<h4>Help</h4>
 							<ul>
-								<NavLinkItem to='/#'>Contact</NavLinkItem>
-								<NavLinkItem to='/faq'>FAQ</NavLinkItem>
-								<NavLinkItem to='/delivery'>Delivery</NavLinkItem>
-								<NavLinkItem to='/manuals'>Assembly & manuals</NavLinkItem>
-								<NavLinkItem to='/payment'>Payment options</NavLinkItem>
-								<NavLinkItem to='/privacy-policy'>Privacy policy</NavLinkItem>
-								<NavLinkItem to='/terms'>Terms & conditions</NavLinkItem>
+								<h4>Помощь</h4>
+								<NavLinkItem to='/#'>Контакты</NavLinkItem>
+								<NavLinkItem to='/faq'>Вопросы и ответы</NavLinkItem>
+								<NavLinkItem to='/delivery'>Доставка</NavLinkItem>
+								<NavLinkItem to='/manuals'>Сборка и инструкции</NavLinkItem>
+								<NavLinkItem to='/privacy-policy'>
+									Политика конфиденциальности
+								</NavLinkItem>
+								<NavLinkItem to='/terms'>Условия использования</NavLinkItem>
 							</ul>
 						</div>
 						<div className='email-container'>
-							<h1 className='headline'>Join the ride.</h1>
-							<p className='subtext'>Sign up for our newsletter.</p>
+							<h1 className='headline'>Присоединяйтесь.</h1>
 
 							{subscribed ? (
-								<p className='success-message'>Thanks for subscribing 🚴‍♂️</p>
+								<p className='success-message'>Спасибо за подписку 🚴‍♂️</p>
 							) : (
 								<form className='email-form' onSubmit={handleSubmit}>
 									<input
 										type='email'
-										placeholder='Enter your email address here'
+										placeholder='Введите ваш email'
 										className='email-input'
 										value={email}
 										onChange={e => setEmail(e.target.value)}
 										required
 									/>
 									<button type='submit' className='subscribe-button'>
-										Subscribe
+										Подписаться
 									</button>
 								</form>
 							)}
 
 							<label className='checkbox-container'>
 								<input type='checkbox' required />
-								By signing up, I agree to the
+								Регистрируясь, я соглашаюсь с
 								<NavLinkItem to='/privacy-policy' className='privacy-policy'>
-									privacy policy
+									политикой конфиденциальности
 								</NavLinkItem>
-								of Veloretti.
+								Veloretti.
 							</label>
 							<div className='social-icons'>
 								<a href='https://facebook.com'>

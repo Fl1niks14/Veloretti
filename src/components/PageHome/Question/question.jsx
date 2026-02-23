@@ -1,6 +1,39 @@
 import { useState } from 'react'
 import './question.css'
 
+const faqData = [
+	{
+		id: 0,
+		question: 'Что насчет оформления документов?',
+		answer:
+			'Программа Veloretti Business минимизирует бюрократию. Весь документооборот переведен в цифровой формат: через онлайн-платформу вы можете управлять контрактами и отслеживать платежи. Подписание происходит в пару кликов, что освобождает ваш HR-отдел от бумажной волокиты.'
+	},
+	{
+		id: 1,
+		question: 'Как это работает при увольнении или выходе на пенсию?',
+		answer:
+			'В случае увольнения сотрудник может выкупить велосипед по остаточной стоимости или передать право лизинга коллеге. Мы также предлагаем опцию досрочного расторжения договора с возвратом велосипеда партнеру — решение найдется для каждого.'
+	},
+	{
+		id: 2,
+		question: 'Сколько стоит Veloretti Bike Plan для работодателя?',
+		answer:
+			'Для большинства компаний внедрение плана абсолютно бесплатно. Программа реализуется через обмен части зарплаты, что позволяет экономить на страховых взносах. Вы сами решаете, инвестировать ли дополнительные средства или оставить план на самофинансировании.'
+	},
+	{
+		id: 3,
+		question: 'Как устроено страхование и сервисное обслуживание?',
+		answer:
+			'Каждый велосипед застрахован по системе "All-Risk" от кражи и вандализма. В пакет включено регулярное ТО: наш мобильный сервис приедет прямо к вашему офису или домой к сотруднику. Также доступна круглосуточная помощь на дорогах.'
+	},
+	{
+		id: 4,
+		question: 'Каковы юридические требования для реализации плана?',
+		answer:
+			'Велосипедный план полностью соответствует трудовому и налоговому законодательству. Программа оформляется как доп. соглашение к трудовому договору. Мы предоставляем все шаблоны и консультируем ваш юридический отдел.'
+	}
+]
+
 function Quest() {
 	const [activeIndex, setActiveIndex] = useState(null)
 
@@ -9,69 +42,36 @@ function Quest() {
 	}
 
 	return (
-		<>
-			<div className='question'>
-				<header className='header'>
-					<h1>Any questions?</h1>
-				</header>
-				<main className='faq-section'>
-					<div className='faq-item'>
-						<h2 onClick={() => toggleAccordion(0)}>
-							What about the paperwork?
-							<span>{activeIndex === 0 ? '-' : '+'}</span>
-						</h2>
-						{activeIndex === 0 && (
-							<p>
-								The bicycle plan is set up so that there will be no
-								administrative work on your part as the employer. You can use a
-								free online platform that has been created by your leasing
-								partner. This provides you with a simple overview of your
-								business and your employees, allowing you to arrange everything.
-								It also simplifies all the paperwork. Everything is organised
-								with just a few clicks.
-							</p>
+		<div className='question-container'>
+			<header className='faq-header'>
+				<h1>Остались вопросы?</h1>
+			</header>
+
+			<div className='faq-list'>
+				{faqData.map(item => (
+					<div
+						key={item.id}
+						className={`faq-item ${activeIndex === item.id ? 'active' : ''}`}
+					>
+						<div
+							className='faq-question'
+							onClick={() => toggleAccordion(item.id)}
+						>
+							<h2>{item.question}</h2>
+							<span className='faq-icon'>
+								{activeIndex === item.id ? '−' : '+'}
+							</span>
+						</div>
+
+						{activeIndex === item.id && (
+							<div className='faq-answer'>
+								<p>{item.answer}</p>
+							</div>
 						)}
 					</div>
-					<div className='faq-item'>
-						<h2 onClick={() => toggleAccordion(1)}>
-							How does it work with an employee who retires early?
-							<span>{activeIndex === 1 ? '-' : '+'}</span>
-						</h2>
-						{activeIndex === 1 && (
-							<p>Details about retiring employees and the plan go here.</p>
-						)}
-					</div>
-					<div className='faq-item'>
-						<h2 onClick={() => toggleAccordion(2)}>
-							What does a Veloretti Bike Plan cost for an employer?
-							<span>{activeIndex === 2 ? '-' : '+'}</span>
-						</h2>
-						{activeIndex === 2 && (
-							<p>Details about costs for the employer go here.</p>
-						)}
-					</div>
-					<div className='faq-item'>
-						<h2 onClick={() => toggleAccordion(3)}>
-							How is the insurance & maintenance arranged when leasing a
-							Veloretti bike?
-							<span>{activeIndex === 3 ? '-' : '+'}</span>
-						</h2>
-						{activeIndex === 3 && (
-							<p>Details about insurance and maintenance go here.</p>
-						)}
-					</div>
-					<div className='faq-item'>
-						<h2 onClick={() => toggleAccordion(4)}>
-							What are the legal requirements for the Veloretti bicycle plan?
-							<span>{activeIndex === 4 ? '-' : '+'}</span>
-						</h2>
-						{activeIndex === 4 && (
-							<p>Details about legal requirements go here.</p>
-						)}
-					</div>
-				</main>
+				))}
 			</div>
-		</>
+		</div>
 	)
 }
 

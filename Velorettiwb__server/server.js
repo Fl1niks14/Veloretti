@@ -55,7 +55,6 @@ app.post('/submit', async (req, res) => {
 	}
 })
 
-// 📄 Получение одного контакта
 app.get('/contacts/:id', async (req, res) => {
 	const { id } = req.params
 	try {
@@ -70,8 +69,6 @@ app.get('/contacts/:id', async (req, res) => {
 		res.status(500).json({ message: 'Ошибка сервера', error: error.message })
 	}
 })
-
-// 📋 Все контакты
 app.get('/contacts', async (req, res) => {
 	try {
 		const result = await pool.query(
@@ -83,8 +80,6 @@ app.get('/contacts', async (req, res) => {
 		res.status(500).json({ message: 'Ошибка сервера', error: error.message })
 	}
 })
-
-// 🔄 Обновление статуса
 app.patch('/contacts/:id/status', async (req, res) => {
 	const { id } = req.params
 	const { status } = req.body

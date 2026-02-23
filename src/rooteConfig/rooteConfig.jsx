@@ -1,7 +1,7 @@
 import AdminPage from '../components/OrdersPage/OrdersPage'
-import Reset from '../container/404/404'
+import Reset from '../container/Reset'
 import HomePage from '../container/HomePage'
-import Products from '../container/Product/Products'
+import Products from '../container/Reset'
 
 const routesConfig = [
 	{

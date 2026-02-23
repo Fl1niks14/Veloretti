@@ -1,5 +1,5 @@
 import './mainwb.css'
-import text from './img-main/image.png'
+import text from './img-main/HeroSection.png'
 import textbaik from './img-main/photo_2024-12-13_18-00-18.jpg'
 import textvelo from './img-main/photo_2024-12-13_22-20-33.jpg'
 import piplevelo from './img-main/div.sizing-small.png'
@@ -8,97 +8,133 @@ const Main = () => {
 	return (
 		<main>
 			<section>
-				<article>
-					<div className='hero-article'>
-						<div className='hero-content'>
-							<dir className='container'>
-								<img className='text-hero' src={text} alt='text' />
-							</dir>
-						</div>
-					</div>
-				</article>
+				<article></article>
 				<article>
 					<div className='peple-content'>
 						<div className='photo-peple'></div>
-						<div className='text-peple'>
-							<img src={textbaik} alt='textbaik' />
-							<h2>
-								Veloretti Electrics benefit both the environment and the health
-								of your employees. Oh, and they look good too. Cost-free for the
-								employer and outside of the WKR.
-							</h2>
-							<h4>Discover more</h4>
+						<div className='text-people'>
+							<h1 className='text-top'>
+								Пересадите свою команду на будущее. Сегодня.
+							</h1>
+							<p className='hero-description'>
+								Veloretti Business — это не просто транспорт. Это экологичная
+								альтернатива служебным автомобилям, которая повышает
+								продуктивность и снижает углеродный след вашей компании.
+							</p>
+
+							<div className='benefits-section'>
+								<h3>Преимущества:</h3>
+								<ul className='benefits-list'>
+									<li>
+										<strong>0% налогов:</strong> Программа лизинга позволяет
+										списывать расходы на велосипеды из налогооблагаемой базы.
+									</li>
+									<li>
+										<strong>Здоровье команды:</strong> Сотрудники, выбирающие
+										велосипед, на 15% реже берут больничные и работают
+										эффективнее.
+									</li>
+									<li>
+										<strong>Стиль и бренд:</strong> Минималистичный дизайн
+										Veloretti подчеркнет современный статус вашего бренда.
+									</li>
+								</ul>
+							</div>
+
+							<button className='btn-primary'>Узнать условия лизинга</button>
 						</div>
 					</div>
 				</article>
 				<article>
 					<div className='peple-article-photo'>
-						<dir className='container'>
+						<div className='container'>
 							<div className='text-article'>
 								<h1>
-									Service,
+									Сервис,
 									<br />
-									maintenance and <br />
-									insurance
+									обслуживание и <br />
+									страхование
 								</h1>
 								<h2>
-									The lease includes an all-in service package. <br />
-									Throughout the entire 36 months, you are <br />
-									fully insured against damage, theft and <br />
-									maintenance. In addition, you always have <br />
-									access to roadside assistance.
+									Лизинг включает в себя полный пакет услуг. <br />
+									В течение всех 36 месяцев вы <br />
+									полностью застрахованы от повреждений, кражи и <br />
+									износа. Кроме того, у вас всегда есть <br />
+									доступ к помощи на дорогах.
 								</h2>
 							</div>
-						</dir>
+						</div>
 					</div>
 				</article>
 				<article>
 					<div className='peple-content'>
 						<div className='photo-backgraund'></div>
 						<div className='text-peple'>
-							<img src={textvelo} alt='text-main' />
-							<h2>
-								The bike plan is totally independent of the WKR and is free for
-								you as an employer. The employee pays the lease costs and you,
-								as the employer, decide whether you want to contribute to the
-								costs.
-							</h2>
-							<h4>Cost example</h4>
+							<div className='business-text'>
+								<h1>Плата для работодателей</h1>
+								<p className='lead'>
+									Велосипедная программа полностью независима от налоговых
+									вычетов и бесплатна для вас как для работодателя.
+								</p>
+								<p>
+									Сотрудник сам оплачивает стоимость лизинга, а вы решаете,
+									хотите ли вы участвовать в расходах. Это позволяет внедрить
+									систему мобильности без нагрузки на бюджет компании.
+								</p>
+								<div className='price-example'>
+									<h3>Пример стоимости</h3>
+									<p>
+										Инвестиция в здоровье и продуктивность вашей команды от 60 €
+										в месяц.
+									</p>
+								</div>
+								<button className='btn-dark'>Узнать больше о лизинге</button>
+							</div>
 						</div>
 					</div>
 				</article>
 				<article>
 					<div className='peple-content-f container'>
-						<div className='text-ar'>
-							<h1>How it works</h1>
+						<div className='text-content'>
+							<h2 className='section-title'>КАК ЭТО РАБОТАЕТ</h2>
 
-							<div className='step'>
-								<h2>Register your company</h2>
-								<p>Fill in our registration form with your company details.</p>
-							</div>
-							<div className='step'>
-								<h2>Determine the requirements</h2>
-								<p className='none'>You get access to the digital platform.</p>
-							</div>
-							<div className='step'>
-								<h2>Ride your bike!</h2>
-								<p>
-									Your employees can choose their bikes and they'll be delivered
-									straight to their homes.
-								</p>
-							</div>
+							<dl className='steps-list'>
+								<div className='step'>
+									<dt>Зарегистрируйте компанию</dt>
+									<dd>
+										Заполните форму регистрации, указав данные вашей компании
+										для создания корпоративного аккаунта.
+									</dd>
+								</div>
 
-							<div className='step'>
-								<h2>Administration</h2>
-								<p className='none'>
-									The digital platform gives you an easy overview of all the
-									information for your payroll.
-								</p>
-							</div>
+								<div className='step'>
+									<dt>Определите требования</dt>
+									<dd>
+										Вы получите доступ к персональной цифровой платформе для
+										управления парком и выбора моделей.
+									</dd>
+								</div>
+
+								<div className='step'>
+									<dt>Пора кататься!</dt>
+									<dd>
+										Ваши сотрудники выбирают велосипеды, а мы доставляем их
+										полностью собранными прямо к ним домой.
+									</dd>
+								</div>
+
+								<div className='step'>
+									<dt>Администрирование</dt>
+									<dd>
+										Цифровая платформа предоставляет удобный обзор всей
+										информации для начисления заработной платы.
+									</dd>
+								</div>
+							</dl>
 						</div>
 
 						<div className='peplevelo'>
-							<img className='peplevelo-1' src={piplevelo} alt='peplevelo' />
+							<img className='peplevelo-1' src={piplevelo} alt='велосипедист' />
 						</div>
 					</div>
 				</article>

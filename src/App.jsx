@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import routesConfig from './rooteConfig/rooteConfig'
-function App() {
+const App = () => {
 	return (
 		<Router>
 			<Routes>

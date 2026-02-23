@@ -2,14 +2,16 @@ body {
 	font-family: Poppins, sans-serif;
 }
 
-.footer-container{
+.footer-container {
 	background-color: #141615;
+	width: 100%;
 }
+
 .footer {
-	color: #333; 
+	color: #333;
 	margin: 0 auto;
-	overflow: hidden;
-	width: 1440px;
+	width: 100%;
+	max-width: 1440px;
 }
 
 .footer-top {
@@ -19,13 +21,15 @@ body {
 	background-color: #3b3737;
 	padding: 30px 40px;
 	gap: 20px;
+	flex-wrap: wrap;
 }
 
 .footer-top p {
 	color: white;
 	font-size: 15px;
 	font-weight: 200;
-	max-width: 900px;
+	max-width: 850px;
+	line-height: 1.5;
 }
 
 .book-now {
@@ -33,62 +37,53 @@ body {
 	color: #000;
 	border: none;
 	cursor: pointer;
-	height: 40px;
-	width: 220px;
+	min-height: 40px;
+	padding: 10px 30px;
+	width: auto;
+	min-width: 200px;
 	border-radius: 50px;
 	font-weight: 500;
 	transition: all 0.3s ease;
+	white-space: nowrap;
 }
-
-.book-now:hover {
-	background-color: #eaeaea;
-}
-
 .footer-links {
-	display: flex;
-	justify-content: space-between; 
-	flex-wrap: wrap;
-	gap: 40px;
-	padding: 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding: 40px;
+		flex-wrap: wrap;
+		gap: 20px;
+}
+.footer-column {
+    display: flex;
+    gap: 150px;                 
+    min-width: 200px;          
 }
 
-/* Колонки */
+
 .footer-column h4 {
-	font-size: 20px;
-	margin-bottom: 12px;
-	color: white;
-	font-weight: 400;
+    margin: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    white-space: nowrap;      
 }
 
 .footer-column ul {
-	list-style: none;
-	padding: 0;
-	margin: 0 0 20px 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;    
+    gap: 12px;                
 }
-
-.footer-column ul li {
-	margin-bottom: 8px;
-}
-
 .footer-column ul li a {
-	color: #b8b5b5;
-	text-decoration: none;
-	font-weight: 200;
-}
-
-.footer-column ul li a:hover {
-	text-decoration: underline;
-}
-
-/* Newsletter */
-.newsletter-container {
-	max-width: 500px;
-	padding-top: 20px;
-	color: white;
+    color: #b8b5b5;
+    text-decoration: none;
+    display: block;
 }
 
 .headline {
-	position: relative;
 	font-size: 28px;
 	margin: 10px 0;
 	font-weight: 400;
@@ -101,11 +96,13 @@ body {
 	margin-bottom: 20px;
 	font-weight: 200;
 	color: white;
+	letter-spacing: 3px;
 }
 
 .email-form {
 	display: flex;
 	margin-bottom: 15px;
+	width: 100%;
 }
 
 .email-input {
@@ -116,62 +113,64 @@ body {
 	background: transparent;
 	color: #fff;
 	outline: none;
-}
-
-.email-input::placeholder {
-	color: #aaa;
+	min-width: 0;
 }
 
 .subscribe-button {
-	padding: 10px 20px;
+	padding: 10px 25px;
 	border: none;
 	background-color: #fff;
 	color: #121212;
-	border-radius: 0 30px 30px 0;
+	border-radius: 0 50px 50px 0;
 	cursor: pointer;
-	font-weight: 400;
-	transition: all 0.3s ease;
-}
-
-.subscribe-button:hover {
-	background-color: #eaeaea;
+	font-weight: 500;
+	white-space: nowrap;
 }
 
 .checkbox-container {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 8px;
 	font-size: 12px;
 	margin-top: 10px;
+	color: #b8b5b5;
+	line-height: 1.4;
 }
 
-/* Соц. иконки */
+.checkbox-container input {
+	margin-top: 2px;
+}
+
 .social-icons {
 	display: flex;
 	gap: 15px;
-	margin-top: 15px;
+	margin-top: 20px;
 }
 
-.social-icons img {
-	width: 18px;
-	height: 18px;
-	cursor: pointer;
-	transition: transform 0.2s ease;
+@media (max-width: 1024px) {
+	.footer-links {
+		justify-content: flex-start;
+	}
 }
 
-.social-icons img:hover {
-	transform: scale(1.1);
-}
-
-/* Адаптив */
 @media (max-width: 768px) {
 	.footer-top {
 		flex-direction: column;
 		text-align: center;
+		padding: 20px;
+	}
+
+	.footer-top p {
+		max-width: 100%;
 	}
 
 	.footer-links {
 		flex-direction: column;
-		align-items: center;
+		padding: 20px;
+	}
+
+	.email-container {
+		max-width: 100%;
+		min-width: 100%;
 	}
 }

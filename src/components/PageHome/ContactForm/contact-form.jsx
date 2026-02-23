@@ -7,13 +7,13 @@ const ContactForm = () => {
 
 	return (
 		<div className='contact-form-container'>
-			<h1>Get in touch</h1>
+			<h1>Связаться с нами</h1>
 
 			<form className='contact-form' onSubmit={handleSubmit}>
 				<input
 					type='text'
 					name='firstName'
-					placeholder='First name'
+					placeholder='Имя'
 					value={formData.firstName}
 					onChange={handleChange}
 					required
@@ -21,7 +21,7 @@ const ContactForm = () => {
 				<input
 					type='text'
 					name='lastName'
-					placeholder='Last name'
+					placeholder='Фамилия'
 					value={formData.lastName}
 					onChange={handleChange}
 					required
@@ -29,7 +29,7 @@ const ContactForm = () => {
 				<input
 					type='email'
 					name='email'
-					placeholder='Email address'
+					placeholder='Электронная почта'
 					value={formData.email}
 					onChange={handleChange}
 					required
@@ -37,7 +37,7 @@ const ContactForm = () => {
 				<input
 					type='tel'
 					name='phone'
-					placeholder='Phone number'
+					placeholder='Номер телефона'
 					value={formData.phone}
 					onChange={handleChange}
 					pattern='[0-9+\s()-]{6,}'
@@ -47,7 +47,7 @@ const ContactForm = () => {
 				<input
 					type='text'
 					name='company'
-					placeholder='Company name'
+					placeholder='Название компании'
 					value={formData.company}
 					onChange={handleChange}
 				/>
@@ -57,16 +57,16 @@ const ContactForm = () => {
 					onChange={handleChange}
 					required
 				>
-					<option value=''>Company Size</option>
-					<option value='1-10'>1-10</option>
-					<option value='11-50'>11-50</option>
-					<option value='51-200'>51-200</option>
-					<option value='201+'>201+</option>
+					<option value=''>Размер компании</option>
+					<option value='1-10'>1-10 сотрудников</option>
+					<option value='11-50'>11-50 сотрудников</option>
+					<option value='51-200'>51-200 сотрудников</option>
+					<option value='201+'>Более 200 сотрудников</option>
 				</select>
 				<input
 					type='number'
 					name='bikes'
-					placeholder='Number of bikes'
+					placeholder='Количество велосипедов'
 					value={formData.bikes}
 					onChange={handleChange}
 					min='1'
@@ -74,19 +74,19 @@ const ContactForm = () => {
 				/>
 				<textarea
 					name='message'
-					placeholder='How can we help'
+					placeholder='Чем мы можем вам помочь?'
 					value={formData.message}
 					onChange={handleChange}
 					rows='5'
 				/>
 				<button type='submit' className='submit-button' disabled={loading}>
-					{loading ? 'Sending...' : 'Send the request'}
+					{loading ? 'Отправка...' : 'Отправить запрос'}
 				</button>
 
 				{success && (
-					<p className='form-success'>✅ Request sent successfully!</p>
+					<p className='form-success'>✅ Запрос успешно отправлен!</p>
 				)}
-				{error && <p className='form-error'>❌ {error}</p>}
+				{error && <p className='form-error'>❌ Произошла ошибка: {error}</p>}
 			</form>
 		</div>
 	)
