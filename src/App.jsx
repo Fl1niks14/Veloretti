@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import routesConfig from './rooteConfig/rooteConfig'
 const App = () => {
 	return (
-		<Router>
+		<Router basename='/Veloretti'>
 			<Routes>
 				{routesConfig.map((route, index) => {
 					const Component = route.Component

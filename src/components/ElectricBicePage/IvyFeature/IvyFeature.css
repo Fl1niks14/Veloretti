@@ -1,0 +1,73 @@
+.ivy-section {
+	padding: 100px;
+	width: 100%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+}
+
+.ivy-container {
+	width: 100%;
+	max-width: 1440px;
+	min-height: 700px;
+
+	display: flex;
+}
+
+.ivy-content {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px;
+	background-color: #ffffff;
+}
+
+.ivy-text-wrapper {
+	max-width: 420px;
+}
+
+.ivy-title {
+	font-family: 'Inter', sans-serif;
+	font-size: 4rem;
+	font-weight: 400;
+	margin-bottom: 30px;
+	color: #000;
+}
+
+.ivy-description {
+	font-family: 'Inter', sans-serif;
+	font-size: 1rem;
+	line-height: 1.8;
+	color: #888;
+
+}
+
+.ivy-image-bg {
+	flex: 1;
+	background-image: url('/public/img/ivi.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+	.ivy-container {
+		flex-direction: column-reverse;
+		min-height: auto;
+	}
+
+	.ivy-image-bg {
+		height: 400px;
+		width: 100%;
+	}
+
+	.ivy-content {
+		padding: 40px 20px;
+		text-align: center;
+	}
+
+	.ivy-title {
+		font-size: 2.5rem;
+	}
+}

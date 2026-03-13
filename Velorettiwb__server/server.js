@@ -80,11 +80,92 @@ app.get('/contacts', async (req, res) => {
 		res.status(500).json({ message: 'Ошибка сервера', error: error.message })
 	}
 })
+app.post('/api/orders', async (req, res) => {
+	const { userName, email, phone, bikeName, bikeColor, price, delivery } =
+		req.body
+
+	try {
+		const result = await pool.query(
+			`INSERT INTO orders 
+            (user_name, user_email, user_phone, bike_name, bike_color, price, delivery_method)
+            VALUES ($1, $2, $3, $4, $5, $6, $7)
+            RETURNING *`,
+			[userName, email, phone, bikeName, bikeColor, price, delivery]
+		)
+
+		res.status(201).json({
+			success: true,
+			message: '✅ Заказ успешно оформлен',
+			order: result.rows[0]
+		})
+	} catch (error) {
+		console.error('❌ Ошибка сохранения заказа:', error.message)
+		res
+			.status(500)
+			.json({ success: false, message: 'Ошибка сервера при создании заказа' })
+	}
+})
+// Получение всех розничных заказов (из таблицы orders)
+app.get('/api/orders', async (req, res) => {
+	try {
+		const result = await pool.query(
+			'SELECT * FROM orders ORDER BY created_at DESC'
+		)
+		res.json(result.rows)
+	} catch (error) {
+		console.error('❌ Ошибка получения заказов:', error)
+		res.status(500).json({ message: 'Ошибка сервера' })
+	}
+})
+// Эндпоинт для получения городских велосипедов
+app.get('/api/city-bikes', async (req, res) => {
+	try {
+		const query = `
+            SELECT cb.*, 
+            json_agg(json_build_object(
+                'colorName', v.color_name, 
+                'hex', v.hex_code, 
+                'image', v.image_url
+            )) as variants
+            FROM city_bikes cb
+            LEFT JOIN city_bike_variants v ON cb.id = v.bike_id
+            GROUP BY cb.id;
+        `
+		const result = await pool.query(query)
+
+		// Отправляем массив напрямую, так как фронтенд ждет его (setBikes(data))
+		res.json(result.rows)
+	} catch (error) {
+		console.error('❌ Ошибка получения городских байков:', error.message)
+		res.status(500).json({ message: 'Ошибка сервера при получении данных' })
+	}
+})
+
+app.get('/bikes', async (req, res) => {
+	try {
+		const query = `
+            SELECT b.*, 
+            json_agg(json_build_object(
+                'colorName', v.color_name, 
+                'hex', v.hex_code, 
+                'image', v.image_url
+            )) as variants
+            FROM bikes b
+            LEFT JOIN bike_variants v ON b.id = v.bike_id
+            GROUP BY b.id;
+        `
+		const result = await pool.query(query)
+		res.json({ bikes: result.rows })
+	} catch (error) {
+		console.error('❌ Ошибка получения байков:', error)
+		res.status(500).json({ message: 'Ошибка сервера' })
+	}
+})
 app.patch('/contacts/:id/status', async (req, res) => {
 	const { id } = req.params
 	const { status } = req.body
-
 	const allowedStatuses = ['new', 'in_progress', 'done']
+
 	if (!allowedStatuses.includes(status)) {
 		return res.status(400).json({ message: '❌ Некорректный статус' })
 	}

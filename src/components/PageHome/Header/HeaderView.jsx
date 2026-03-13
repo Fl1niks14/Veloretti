@@ -7,7 +7,7 @@ import velo from './img/velo.png'
 function HeaderView({ menuItems = [], activeMenu, onMenuClick, onMenuClose }) {
 	return (
 		<header>
-			<div className='container'>
+			<div className='header__container'>
 				<div className='navbar'>
 					<div className='nav-left'>
 						<Link to='/'>

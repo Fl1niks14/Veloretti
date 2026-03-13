@@ -1,0 +1,70 @@
+.battery-section {
+	width: 100%;
+	min-height: 900px;
+	/* Высота секции как на макете */
+	display: flex;
+	align-items: center;
+
+	/* Указываем путь к картинке относительно CSS файла */
+	background-image: url('../../../../public/img/batarei.png');
+	background-size: cover;
+	/* Растягивает на всю ширину и высоту */
+	background-position: center right;
+	/* Прижимает фокус картинки вправо */
+	background-repeat: no-repeat;
+
+	/* Цвет фона на случай, если картинка не прогрузится */
+	background-color: #d2ccc3;
+}
+
+.battery-container {
+	width: 100%;
+	max-width: 1400px;
+	/* Ограничиваем контентную область */
+	margin: 0 auto;
+	padding: 0 80px;
+	/* Отступ текста от края экрана */
+}
+
+.battery-content {
+	max-width: 550px;
+	/* Чтобы текст не растягивался на весь экран */
+}
+
+.battery-title {
+	font-family: 'Inter', sans-serif;
+	font-size: 3.2rem;
+	line-height: 1.1;
+	font-weight: 400;
+	color: #ffffff;
+	margin-bottom: 30px;
+}
+
+.battery-text {
+	font-family: 'Inter', sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+/* Адаптив для планшетов и телефонов */
+@media (max-width: 1024px) {
+	.battery-container {
+		padding: 0 40px;
+	}
+
+	.battery-title {
+		font-size: 2.2rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.battery-section {
+		background-position: center;
+		text-align: center;
+	}
+
+	.battery-content {
+		margin: 0 auto;
+	}
+}

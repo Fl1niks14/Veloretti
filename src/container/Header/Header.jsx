@@ -5,7 +5,7 @@ function Header() {
 	const menuItems = [
 		{
 			name: 'Электровелосипеды',
-			items: [{ label: 'Электровелосипеды', to: '/electric-bikes' }]
+			items: [{ label: 'Электровелосипеды', to: '/еlectric-bikes' }]
 		},
 		{
 			name: 'Городские велосипеды',
@@ -13,7 +13,7 @@ function Header() {
 		},
 		{
 			name: 'О нас',
-			items: [{ label: 'Перейти', to: '/kids-bikes' }]
+			items: [{ label: 'Перейти', to: '/about-us' }]
 		},
 		{
 			name: 'Лизинг',

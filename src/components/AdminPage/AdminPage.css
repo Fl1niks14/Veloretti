@@ -1,0 +1,161 @@
+/* Основной контейнер */
+.admin-container {
+	max-width: 1200px;
+	margin: 40px auto;
+	padding: 0 20px;
+	font-family: 'Inter', system-ui, -apple-system, sans-serif;
+	color: #1a1a1a;
+}
+
+/* Шапка и заголовки */
+.admin-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.admin-header h1 {
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: -0.5px;
+}
+
+/* Табы (Переключатели) */
+.admin-tabs {
+	display: flex;
+	background: #f1f1f1;
+	padding: 4px;
+	border-radius: 12px;
+	gap: 4px;
+}
+
+.admin-tabs button {
+	padding: 10px 20px;
+	border: none;
+	background: transparent;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 14px;
+	transition: all 0.2s ease;
+	color: #666;
+}
+
+.admin-tabs button.active {
+	background: #fff;
+	color: #000;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Обёртка таблицы для скролла на мобилках */
+.table-wrapper {
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* Таблица */
+.admin-table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	font-size: 14px;
+}
+
+.admin-table th {
+	background: #fafafa;
+	padding: 16px 20px;
+	font-weight: 600;
+	color: #888;
+	text-transform: uppercase;
+	font-size: 11px;
+	letter-spacing: 0.5px;
+	border-bottom: 1px solid #eee;
+}
+
+.admin-table td {
+	padding: 18px 20px;
+	border-bottom: 1px solid #f6f6f6;
+	vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+	border-bottom: none;
+}
+
+.admin-table tr:hover {
+	background-color: #fcfcfc;
+}
+
+/* Текст и детали */
+.admin-table strong {
+	color: #000;
+	display: block;
+	margin-bottom: 2px;
+}
+
+.admin-table small {
+	color: #888;
+	font-size: 12px;
+}
+
+/* Статусы (Badges) */
+.status-badge {
+	display: inline-flex;
+	padding: 6px 12px;
+	border-radius: 20px;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+/* Цвета статусов */
+.status-badge.new,
+.status-badge.pending {
+	background: #fff4e5;
+	color: #b07000;
+}
+
+.status-badge.completed,
+.status-badge.success {
+	background: #e7f7ed;
+	color: #21834a;
+}
+
+.status-badge.shipped {
+	background: #eef2ff;
+	color: #4338ca;
+}
+
+/* Точка цвета байка */
+.color-dot {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Загрузка */
+.loading-state {
+	text-align: center;
+	padding: 60px;
+	color: #999;
+	font-style: italic;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+	.admin-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+	}
+
+	.table-wrapper {
+		overflow-x: auto;
+	}
+}

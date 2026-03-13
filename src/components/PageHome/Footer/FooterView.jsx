@@ -21,7 +21,6 @@ function FooterView({ email, setEmail, handleSubmit, subscribed }) {
 								<NavLinkItem to='/city-bikes'>
 									<p>Городские велосипеды</p>
 								</NavLinkItem>
-								<NavLinkItem to='/kids-bikes'>Детские велосипеды</NavLinkItem>
 							</ul>
 
 							<ul>
@@ -30,7 +29,6 @@ function FooterView({ email, setEmail, handleSubmit, subscribed }) {
 								<NavLinkItem to='/journal'>Журнал</NavLinkItem>
 								<NavLinkItem to='/reviews'>Отзывы</NavLinkItem>
 								<NavLinkItem to='/press'>Пресса</NavLinkItem>
-								<NavLinkItem to='/jobs'>Вакансии</NavLinkItem>
 							</ul>
 							<ul>
 								<h4>Помощь</h4>

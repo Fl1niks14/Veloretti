@@ -206,6 +206,7 @@ h1,
 		background-position: center left;
 		background-repeat: no-repeat;
 		margin-left: 42px;
+		
 	}
 
 .business-text {
@@ -230,18 +231,16 @@ h1,
 	margin-bottom: 24px;
 	color: #333;
 	border-left: 3px solid #000;
-
 	padding-left: 20px;
 }
 
-/* Основное описание */
 .business-text p:not(.lead) {
 	font-size: 16px;
 	color: #5e5e5e;
 	margin-bottom: 32px;
 }
 
-/* Блок "Пример стоимости" — делаем его минималистичным, но заметным */
+
 .price-example {
 	background-color: #f9f9f9;
 	padding: 30px;
@@ -272,7 +271,6 @@ h1,
 	padding: 20px 45px;
 	border: none;
 	border-radius: 6px;
-	/* Квадратные формы со скруглением выглядят строже */
 	font-size: 15px;
 	font-weight: 700;
 	text-transform: uppercase;

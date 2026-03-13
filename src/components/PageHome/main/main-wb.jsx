@@ -1,7 +1,4 @@
 import './mainwb.css'
-import text from './img-main/HeroSection.png'
-import textbaik from './img-main/photo_2024-12-13_18-00-18.jpg'
-import textvelo from './img-main/photo_2024-12-13_22-20-33.jpg'
 import piplevelo from './img-main/div.sizing-small.png'
 
 const Main = () => {
@@ -41,7 +38,14 @@ const Main = () => {
 								</ul>
 							</div>
 
-							<button className='btn-primary'>Узнать условия лизинга</button>
+							<button
+								className='btn-primary'
+								onClick={() =>
+									(window.location.href = '/Veloretti/corporate-leasing')
+								}
+							>
+								Узнать условия лизинга
+							</button>
 						</div>
 					</div>
 				</article>
@@ -84,11 +88,18 @@ const Main = () => {
 								<div className='price-example'>
 									<h3>Пример стоимости</h3>
 									<p>
-										Инвестиция в здоровье и продуктивность вашей команды от 60 €
-										в месяц.
+										Инвестиция в здоровье и продуктивность вашей команды от 5500
+										₽ в месяц.
 									</p>
 								</div>
-								<button className='btn-dark'>Узнать больше о лизинге</button>
+								<button
+									className='btn-dark'
+									onClick={() =>
+										(window.location.href = '/Veloretti/corporate-leasing')
+									}
+								>
+									Узнать больше о лизинге
+								</button>
 							</div>
 						</div>
 					</div>

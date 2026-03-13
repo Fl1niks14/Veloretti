@@ -1,14 +1,12 @@
-import { NavLink } from 'react-router-dom'
+// ✅ ПРАВИЛЬНО
+import { Link } from 'react-router-dom'
 
-function NavLinkItem({ to, children, className = 'submenu-link' }) {
+const NavLinkItem = ({ to, children, className }) => {
 	return (
-		<li>
-			<NavLink
-				to={to}
-				className={({ isActive }) => `${className} ${isActive ? 'active' : ''}`}
-			>
+		<li className='menu-item-wrapper'>
+			<Link to={to} className={className}>
 				{children}
-			</NavLink>
+			</Link>
 		</li>
 	)
 }
