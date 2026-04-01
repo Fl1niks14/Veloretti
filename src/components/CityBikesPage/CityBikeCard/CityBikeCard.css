@@ -1,0 +1,39 @@
+/* Инфо-блок центрирует всё, кроме хедера */
+.bike-card__info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+}
+
+.bike-card__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.bike-card__brand {
+	font-size: 10px;
+	color: #757575;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.bike-card__price {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.bike-card__title {
+	font-size: 22px;
+	margin: 0 0 10px 0;
+	text-align: center;
+}
+
+.bike-card__selected-color {
+	font-size: 12px;
+	color: #757575;
+	margin-bottom: 15px;
+}

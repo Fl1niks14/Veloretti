@@ -1,0 +1,242 @@
+.profile-container {
+	padding: 140px 20px;
+	display: flex;
+	justify-content: center;
+	background: #fff;
+}
+
+.profile-inner {
+	width: 100%;
+	max-width: 550px;
+}
+
+/* Шапка */
+.profile-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 50px;
+}
+
+.profile-header h1 {
+	font-size: 38px;
+	font-weight: 900;
+	letter-spacing: 2px;
+}
+
+.user-email {
+	color: #888;
+	font-size: 14px;
+	margin-top: 5px;
+}
+
+.logout-link {
+	background: none;
+	border: none;
+	font-size: 11px;
+	font-weight: 800;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* Черная карта */
+.loyalty-card-black {
+	background: #000;
+	color: #fff;
+	padding: 40px;
+	border-radius: 4px;
+	margin-bottom: 60px;
+}
+
+.label-mini {
+	font-size: 10px;
+	font-weight: 700;
+	color: #555;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.status-name {
+	font-size: 24px;
+	margin: 10px 0 40px;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
+
+.bonus-value {
+	font-size: 52px;
+	font-weight: 900;
+	margin: 5px 0;
+	line-height: 1;
+}
+
+.progress-bar-wrapper {
+	width: 100%;
+	height: 1px;
+	background: #333;
+	margin: 25px 0 15px;
+}
+
+.progress-fill {
+	height: 100%;
+	background: #fff;
+}
+
+.label-next {
+	font-size: 11px;
+	color: #555;
+	font-weight: 600;
+}
+
+/* Секции */
+.section-title {
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 2px;
+	color: #000;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+/* Промокод */
+.promo-controls {
+	display: flex;
+	gap: 10px;
+}
+
+.promo-controls input {
+	flex: 1;
+	border: 1px solid #ddd;
+	padding: 15px;
+	font-size: 14px;
+	outline: none;
+	transition: border 0.3s;
+}
+
+.promo-controls input:focus {
+	border-color: #000;
+}
+
+.btn-apply {
+	background: #000;
+	color: #fff;
+	border: none;
+	padding: 0 30px;
+	font-weight: 800;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.promo-status {
+	font-size: 12px;
+	margin-top: 10px;
+	font-weight: 700;
+}
+
+.promo-status.success {
+	color: #27ae60;
+}
+
+.promo-status.error {
+	color: #e74c3c;
+}
+
+/* Гайд по бонусам */
+.bonus-guide {
+	margin-top: 60px;
+}
+
+.guide-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 25px;
+}
+
+.guide-item {
+	display: flex;
+	gap: 15px;
+}
+
+.step-num {
+	font-size: 10px;
+	font-weight: 900;
+	color: #ddd;
+	padding-top: 4px;
+}
+
+.step-info h5 {
+	font-size: 13px;
+	font-weight: 800;
+	margin-bottom: 5px;
+}
+
+.step-info p {
+	font-size: 12px;
+	color: #777;
+	line-height: 1.4;
+	margin-bottom: 8px;
+}
+
+.reward-tag {
+	font-size: 10px;
+	font-weight: 900;
+	background: #f5f5f5;
+	padding: 3px 8px;
+	border-radius: 2px;
+}
+
+/* История */
+.history-section {
+	margin-top: 60px;
+}
+
+.transaction-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 18px 0;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.t-date {
+	font-size: 12px;
+	color: #888;
+	width: 80px;
+}
+
+.t-name {
+	flex: 1;
+	font-size: 13px;
+	font-weight: 700;
+	padding: 0 15px;
+}
+
+.t-amount {
+	font-size: 13px;
+	font-weight: 900;
+}
+
+.t-amount.plus {
+	color: #000;
+}
+
+.t-amount.minus {
+	color: #e74c3c;
+}
+
+/* Пустое состояние */
+.profile-empty {
+	padding: 150px 20px;
+	text-align: center;
+}
+
+.btn-black {
+	display: inline-block;
+	background: #000;
+	color: #fff;
+	padding: 15px 40px;
+	text-decoration: none;
+	margin-top: 20px;
+	font-weight: 800;
+	font-size: 12px;
+}

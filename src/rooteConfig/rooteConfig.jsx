@@ -4,8 +4,10 @@ import HomePage from '../container/HomePage'
 import Еlectric from '../container/Еlectric-bikes'
 import CityBikesPage from '../container/CityBikesPage'
 import AboutUs from '../container/About-Us'
-import PersonalLeasing from '../container/PersonalLeasingPage'
-import CorporateLeasingPage from '../container/CorporateLeasingPage'
+import ServicePage from '../container/ServicePage'
+import AuthPages from '../container/AuthPages'
+import ProfilePage from '../container/ProfilePage'
+
 const routesConfig = [
 	{
 		path: '/',
@@ -24,18 +26,21 @@ const routesConfig = [
 		Component: AboutUs
 	},
 	{
-		path: '/corporate-leasing',
-		Component: CorporateLeasingPage
-	},
-	{
-		path: '/personal-leasing',
-		Component: PersonalLeasing
+		path: '/service',
+		Component: ServicePage
 	},
 	{
 		path: '/admin',
 		Component: AdminPage
 	},
-	,
+	{
+		path: '/login',
+		Component: AuthPages
+	},
+	{
+		path: '/profile',
+		Component: ProfilePage
+	},
 	{
 		path: '*',
 		Component: Reset

@@ -1,0 +1,54 @@
+.bonus-guide {
+	margin-top: 60px;
+	padding-top: 40px;
+	border-top: 1px solid #eee;
+}
+
+.guide-title {
+	font-size: 12px;
+	letter-spacing: 2px;
+	font-weight: 800;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+}
+
+.guide-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 30px;
+}
+
+.guide-item {
+	display: flex;
+	gap: 15px;
+}
+
+.step-num {
+	font-size: 10px;
+	font-weight: 800;
+	color: #ccc;
+	padding-top: 4px;
+}
+
+.step-content h4 {
+	font-size: 13px;
+	font-weight: 800;
+	margin-bottom: 8px;
+	letter-spacing: 1px;
+}
+
+.step-content p {
+	font-size: 12px;
+	line-height: 1.5;
+	color: #666;
+	margin-bottom: 10px;
+}
+
+.step-reward {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 900;
+	background: #f9f9f9;
+	padding: 2px 8px;
+	border-radius: 2px;
+}

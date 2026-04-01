@@ -1,10 +1,9 @@
 import './AboutCity.css'
-
+import Aboutus from '../../../../public/img/Aboutus.png'
 const AboutCity = () => {
 	return (
 		<section className='about-section'>
 			<div className='about-container'>
-				{/* Левая часть: Текст и история */}
 				<div className='about-info'>
 					<span className='about-subtitle'>Наша история</span>
 					<h2 className='about-title'>Переосмысляя городское движение</h2>
@@ -25,12 +24,8 @@ const AboutCity = () => {
 
 					<div className='about-stats'>
 						<div className='stat-item'>
-							<span className='stat-number'>20к+</span>
-							<span className='stat-label'>Счастливых райдеров</span>
-						</div>
-						<div className='stat-item'>
-							<span className='stat-number'>44</span>
-							<span className='stat-label'>Городов присутствия</span>
+							<span className='stat-number'>100%</span>
+							<span className='stat-label'>Ручная работа</span>
 						</div>
 					</div>
 				</div>
@@ -38,7 +33,7 @@ const AboutCity = () => {
 				<div className='about-visual'>
 					<div className='about-image-wrapper'>
 						<img
-							src='../../../../public/img/Aboutus.jpg'
+							src={Aboutus}
 							alt='Мастерская Veloretti'
 							className='about-main-img'
 						/>

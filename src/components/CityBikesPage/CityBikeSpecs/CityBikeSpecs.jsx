@@ -1,6 +1,22 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
 const CityBikeSpecs = () => {
+	const { hash } = useLocation()
+
+	useEffect(() => {
+		if (hash) {
+			const element = document.getElementById(hash.replace('#', ''))
+			if (element) {
+				setTimeout(() => {
+					element.scrollIntoView({ behavior: 'smooth' })
+				}, 100)
+			}
+		}
+	}, [hash])
+
 	return (
-		<section className='specs-section'>
+		<section id='detail-city' className='specs-section'>
 			<div className='specs-container'>
 				<h2 className='specs-main-title'>Технические характеристики.</h2>
 

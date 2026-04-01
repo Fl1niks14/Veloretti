@@ -1,14 +1,13 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import routesConfig from './rooteConfig/rooteConfig'
+import { BrowserRouter as Router } from 'react-router-dom'
+import AppContent from './AppContent'
+import { AuthProvider } from './components/Auth/AuthContext' // Проверь правильность пути до файла!
+
 const App = () => {
 	return (
 		<Router basename='/Veloretti'>
-			<Routes>
-				{routesConfig.map((route, index) => {
-					const Component = route.Component
-					return <Route key={index} path={route.path} element={<Component />} />
-				})}
-			</Routes>
+			<AuthProvider>
+				<AppContent />
+			</AuthProvider>
 		</Router>
 	)
 }

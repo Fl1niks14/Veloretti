@@ -1,49 +1,89 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../../Store/CartSlice/CartSlice'
+import CityBikeCard from '../CityBikeCard/CityBikeCard'
 import './CityBikes.css'
-import OrderModal from '../../OrderModal/OrderModal'
+import './CommonBikes.css'
+import gorod3 from '../../../../public/img/gorod3.png'
+import gorod4 from '../../../../public/img/gorod4.png'
+import gorod2 from '../../../../public/img/gorod2.png'
+import gorod1 from '../../../../public/img/gorod1.png'
+const MOCK_DATA = [
+	{
+		id: 1,
+		name: 'Berlin Classic',
+		price: 45900,
+		variants: [
+			{
+				colorName: 'Desert Moss',
+				hex: '#556B2F',
+				image: gorod3
+			},
+			{
+				colorName: 'Jet Black',
+				hex: '#e9c13f',
+				image: gorod4
+			}
+		]
+	},
+	{
+		id: 2,
+		name: 'Amsterdam Deluxe',
+		price: 52000,
+		variants: [
+			{
+				colorName: 'Sky Blue',
+				hex: '#f0efee',
+				image: gorod2
+			},
+			{
+				colorName: 'Dusty Rose',
+				hex: '#ffffff',
+				image: gorod1
+			}
+		]
+	}
+]
 
 const CityBikes = () => {
-	const [bikes, setBikes] = useState([])
-	const [loading, setLoading] = useState(true)
-	const [isModalOpen, setIsModalOpen] = useState(false)
-	const [selectedBike, setSelectedBike] = useState(null)
+	const dispatch = useDispatch()
 
+	const [bikes, setBikes] = useState(MOCK_DATA)
+	const [loading, setLoading] = useState(false) // Сразу false для тестов
+
+	/* --- РАБОТА С СЕРВЕРОМ (ЗАКОММЕНТИРОВАНО) ---
 	useEffect(() => {
+		setLoading(true)
 		fetch('http://localhost:3000/api/city-bikes')
 			.then(res => res.json())
 			.then(data => {
 				setBikes(data)
 				setLoading(false)
 			})
-			.catch(err => console.error(err))
+			.catch(err => {
+				console.error('Ошибка загрузки:', err)
+				setLoading(false)
+			})
 	}, [])
+	--------------------------------------------- */
 
-	const openModal = (bike, variant) => {
-		setSelectedBike({ ...bike, selectedVariant: variant })
-		setIsModalOpen(true)
-	}
-
-	if (loading) {
-		return (
-			<section className='ebikes-section'>
-				<div className='eb-container'>
-					<div className='skeleton-title'></div>
-					<div className='ebikes-grid'>
-						{[1, 2].map(n => (
-							<div key={n} className='bike-card skeleton'>
-								<div className='skeleton-image'></div>
-								<div className='skeleton-info'>
-									<div className='skeleton-line short'></div>
-									<div className='skeleton-line medium'></div>
-									<div className='skeleton-button'></div>
-								</div>
-							</div>
-						))}
-					</div>
-				</div>
-			</section>
+	const handleAddToCart = (bike, variant) => {
+		dispatch(
+			addToCart({
+				bike: {
+					id: bike.id,
+					name: bike.name,
+					price: bike.price
+				},
+				variant: {
+					colorName: variant.colorName,
+					image: variant.image
+				}
+			})
 		)
 	}
+
+	if (loading) return <div className='skeleton'>Загрузка...</div>
 
 	return (
 		<section className='ebikes-section'>
@@ -51,62 +91,11 @@ const CityBikes = () => {
 				<h2 className='ebikes-main-title'>Городские велосипеды</h2>
 				<div className='ebikes-grid'>
 					{bikes.map(bike => (
-						<CityBikeCard key={bike.id} bike={bike} onOrder={openModal} />
+						<CityBikeCard key={bike.id} bike={bike} onOrder={handleAddToCart} />
 					))}
 				</div>
 			</div>
-
-			<OrderModal
-				isOpen={isModalOpen}
-				bike={selectedBike}
-				onClose={() => setIsModalOpen(false)}
-			/>
 		</section>
-	)
-}
-
-const CityBikeCard = ({ bike, onOrder }) => {
-	const [selectedVariant, setSelectedVariant] = useState(bike.variants[0])
-
-	return (
-		<article id='city-catalog' className='bike-card fade-in'>
-			<div className='bike-card__visual'>
-				<img
-					src={selectedVariant.image}
-					alt={bike.name}
-					className='bike-card__img'
-				/>
-			</div>
-
-			<div className='bike-card__info'>
-				<div className='bike-card__header'>
-					<div>
-						<p className='bike-card__brand'>Veloretti Город</p>
-						<h3 className='bike-card__title'>{bike.name}</h3>
-					</div>
-					<span className='bike-card__price'>
-						{Number(bike.price * 100).toLocaleString()} ₽
-					</span>
-				</div>
-				<div className='bike-card__colors'>
-					{bike.variants.map(v => (
-						<button
-							key={v.colorName}
-							className={`color-btn ${selectedVariant.colorName === v.colorName ? 'is-active' : ''}`}
-							style={{ '--color-hex': v.hex }}
-							onClick={() => setSelectedVariant(v)}
-							title={v.colorName}
-						/>
-					))}
-				</div>
-				<button
-					className='bike-card__buy-btn'
-					onClick={() => onOrder(bike, selectedVariant)}
-				>
-					Оформить заказ
-				</button>
-			</div>
-		</article>
 	)
 }
 

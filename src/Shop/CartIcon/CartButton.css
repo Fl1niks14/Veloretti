@@ -1,0 +1,76 @@
+.cart-fixed {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	z-index: 1000;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: none;
+	background-color: #000;
+	/* Можно заменить на брендовый цвет */
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+
+/* Эффект при наведении */
+.cart-fixed:hover {
+	transform: scale(1.05);
+}
+
+.cart-fixed:active {
+	transform: scale(0.95);
+}
+
+
+.cart-fixed.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+	transform: scale(0.5) translateY(20px);
+}
+
+/* Бейджик с количеством */
+.cart-fixed__badge {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+
+	background-color: #ff3b30;
+	/* Яркий красный */
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	min-width: 20px;
+	height: 20px;
+	padding: 0 6px;
+	border-radius: 10px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #fff;
+
+	/* Анимация появления/изменения (работает благодаря key={count}) */
+	animation: pop 0.3s ease-out;
+}
+
+@keyframes pop {
+	0% {
+		transform: scale(0.5);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

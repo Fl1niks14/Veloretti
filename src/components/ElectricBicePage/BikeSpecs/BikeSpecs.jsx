@@ -1,8 +1,22 @@
 import './BikeSpecs.css'
-
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 const BikeSpecs = () => {
+	const { hash } = useLocation()
+
+	useEffect(() => {
+		if (hash) {
+			const element = document.getElementById(hash.replace('#', ''))
+			if (element) {
+				setTimeout(() => {
+					element.scrollIntoView({ behavior: 'smooth' })
+				}, 100)
+			}
+		}
+	}, [hash])
+
 	return (
-		<section className='specs-section'>
+		<section id='detail-Electro' className='specs-section'>
 			<div className='specs-container'>
 				<h2 className='specs-main-title'>Все дело в деталях.</h2>
 

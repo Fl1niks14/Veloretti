@@ -67,7 +67,7 @@
 	width: 65%;
 	/* Картинка заходит под текст */
 	height: 100%;
-	background-image: url('../../../../public/img/Hero\ Section.png');
+	background-image: url('/public/img/Section.png');
 	/* Пример lifestyle фото */
 	background-size: cover;
 	background-position: center;

@@ -174,3 +174,14 @@ body {
 		min-width: 100%;
 	}
 }
+.footer a:hover {
+	color: #fff;
+	/* При наведении становится чисто белым */
+}
+.footer a {
+	color: rgba(255, 255, 255, 0.7);
+	/* Светло-серый, чтобы не «кричал» */
+	text-decoration: none;
+	transition: color 0.3s ease;
+	font-size: 14px;
+}

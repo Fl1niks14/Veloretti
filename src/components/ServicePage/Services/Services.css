@@ -1,0 +1,306 @@
+.services-page {
+	background-color: #fff;
+	color: #1a1a1a;
+}
+
+.service-header {
+	max-width: 700px;
+	margin-bottom: 60px;
+	padding-top: 80px;
+}
+
+.lead-text {
+	font-size: 18px;
+	color: #666;
+	line-height: 1.6;
+	margin-top: 15px;
+}
+
+/* Сетка хранения */
+.storage-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 30px;
+	margin-bottom: 80px;
+}
+
+.storage-card {
+	background: #f8f8f8;
+	padding: 50px 40px;
+	position: relative;
+	border: 1px solid #eee;
+	transition: transform 0.3s ease;
+}
+
+.storage-card.highlighted {
+	background: #fff;
+	border: 1px solid #000;
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.card-content h3 {
+	font-size: 24px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+.service-features {
+	list-style: none;
+	padding: 0;
+	margin: 30px 0;
+}
+
+.service-features li {
+	margin-bottom: 12px;
+	padding-left: 25px;
+	position: relative;
+	font-size: 15px;
+	color: #444;
+}
+
+.service-features li::before {
+	content: '●';
+	position: absolute;
+	left: 0;
+	font-size: 10px;
+	top: 4px;
+}
+
+.price-tag {
+	font-size: 28px;
+	font-weight: 800;
+	margin-bottom: 30px;
+}
+
+/* Блок доверия */
+.trust-section {
+	background: #000;
+	color: #fff;
+	padding: 80px 0;
+}
+
+.trust-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 50px;
+}
+
+.trust-item h4 {
+	font-size: 18px;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.trust-item p {
+	font-size: 14px;
+	color: #aaa;
+	line-height: 1.6;
+}
+
+/* Форма v2 */
+.service-content-split {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 100px;
+	padding: 100px 0;
+	align-items: center;
+}
+
+.info-blocks {
+	margin-top: 40px;
+}
+
+.info-block {
+	margin-bottom: 30px;
+}
+
+.info-block span {
+	display: block;
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 12px;
+	margin-bottom: 8px;
+	letter-spacing: 1px;
+}
+
+.form-card-v2 {
+	background: #fff;
+	padding: 50px;
+	border: 1px solid #000;
+	box-shadow: 20px 20px 0px #f0f0f0;
+}
+
+.input-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin-bottom: 20px;
+}
+
+.input-group label {
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.input-group input,
+.input-group select {
+	padding: 15px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+}
+/* Контейнер для кнопок (если они в ряд) */
+.bike-actions {
+	display: flex;
+	gap: 15px;
+	margin-top: 30px;
+}
+
+/* Общий стиль для обеих кнопок */
+.btn-primary,
+.btn-secondary {
+	padding: 18px 35px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border: 2px solid #000;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 200px;
+}
+
+/* Главная кнопка: В корзину (Черная) */
+.btn-primary {
+	background-color: #000;
+	color: #fff;
+}
+
+.btn-primary:hover {
+	background-color: #333;
+	border-color: #333;
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+	transform: translateY(0);
+}
+
+/* Вторичная кнопка: Тест-драйв (Контурная) */
+.btn-secondary {
+	background-color: transparent;
+	color: #000;
+}
+
+.btn-secondary:hover {
+	background-color: #000;
+	color: #fff;
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:active {
+	transform: translateY(0);
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 480px) {
+	.bike-actions {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.btn-primary,
+	.btn-secondary {
+		width: 100%;
+	}
+}
+.submit-btn-v2 {
+	width: 100%;
+	padding: 20px;
+	background: #000;
+	color: #fff;
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+@media (max-width: 992px) {
+	.service-content-split,
+	.trust-grid {
+		grid-template-columns: 1fr;
+		gap: 50px;
+	}
+}
+/* Бейдж "ПОПУЛЯРНО/РЕКОМЕНДУЕМ" */
+.badge {
+	position: absolute;
+	top: 0;
+	right: 40px;
+	background: #000;
+	color: #fff;
+	padding: 8px 15px;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	transform: translateY(-50%);
+}
+
+/* Кнопки в карточках тарифов */
+.plan-btn {
+	width: 100%;
+	padding: 15px;
+	background: transparent;
+	border: 1px solid #000;
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.3s;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.plan-btn.black,
+.plan-btn:hover {
+	background: #000;
+	color: #fff;
+}
+.reset-btn {
+	width: 100%;
+	padding: 15px;
+	background: transparent;
+	border: 1px solid #000;
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.3s;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.reset-btn:hover {
+	background: #000;
+	color: #fff;
+}
+/* Улучшение полей ввода в форме */
+.input-group select,
+.input-group input {
+	outline: none;
+	transition: border-color 0.3s;
+}
+
+.input-group select:focus,
+.input-group input:focus {
+	border-color: #000;
+}
+
+/* Плавный скролл для всей страницы */
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 80px;
+	/* Чтобы хедер не закрывал заголовок при скролле по ID */
+}
